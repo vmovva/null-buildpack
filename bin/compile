@@ -6,6 +6,9 @@ echo "Removing $2 contents."
 rm -rfv $2/*
 
 echo ">---> RamDisk"
+echo "     >----> Checking sudo access"
+sudo -v
+echo "                                >----> Checking sudo access"
 # Mount ramdisk folder in RAM
 mkdir /tmp/ramdisk
 sudo mount -t tmpfs -o size=128M tmpfs /tmp/ramdisk/
